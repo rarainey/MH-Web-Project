@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  attack: 1
+  type: 
+  is_elemental: false
+  element: MyString
+  element_attack: 1
+  rarity: 1
+
+two:
+  name: MyString
+  attack: 1
+  type: 
+  is_elemental: false
+  element: MyString
+  element_attack: 1
+  rarity: 1
