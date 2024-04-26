@@ -1,4 +1,4 @@
 class Monster < ApplicationRecord
-    has_one_attached :icon
-    serialize :weaknesses, Array
+    has_one_attached :picture
+    serialize :weaknesses, JSON
 end

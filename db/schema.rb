@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_26_200104) do
   create_table "monsters", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.string "type"
+    t.string "monster_type"
     t.text "weaknesses", default: [], array: true
     t.string "element"
     t.integer "rank"
@@ -57,7 +57,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_26_200104) do
   create_table "weapons", force: :cascade do |t|
     t.string "name"
     t.integer "attack"
-    t.string "type"
+    t.string "weapon_type"
     t.boolean "is_elemental"
     t.string "element"
     t.integer "element_attack"

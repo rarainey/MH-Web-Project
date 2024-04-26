@@ -3,7 +3,7 @@ class CreateWeapons < ActiveRecord::Migration[7.1]
     create_table :weapons do |t|
       t.string :name
       t.integer :attack
-      t.string :type
+      t.string :weapon_type
       t.boolean :is_elemental
       t.string :element
       t.integer :element_attack

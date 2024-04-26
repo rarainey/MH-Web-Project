@@ -3,7 +3,7 @@ class CreateMonsters < ActiveRecord::Migration[7.1]
     create_table :monsters do |t|
       t.string :name
       t.text :description
-      t.string :type
+      t.string :monster_type
       t.text :weaknesses, array: true, default: []
       t.string :element
       t.integer :rank
