@@ -15,16 +15,10 @@
  */
 
  
- html {
+html {
     background-color: rgb(104, 104, 100);
     color: white
  }
-
-h1 {
-    padding: 10px;
-    background-color: rgb(46, 45, 45);
-    border: 1px solid black
-}
 
 table {
     width: 100%;
@@ -48,4 +42,20 @@ tr:nth-child(even) {
 
 tr:nth-child(odd) {
     background-color: rgb(32, 7, 7);
+}
+
+.header {
+    padding: 10px;
+    background-color: rgb(46, 45, 45);
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.searchbar {
+    margin-top: 32px;
+
+    input {
+        max-height: 25px;
+    }
 }
