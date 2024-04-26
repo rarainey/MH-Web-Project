@@ -1,0 +1,42 @@
+<h1>Monsters</h1>
+
+<table>
+    <tr id="header">
+        <th></th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Weaknesses</th>
+        <th>Element</th>
+        <th>Rank</th>
+        <th>Tail Severable?</th>
+    </tr>
+
+    <% @monsters.each do |monster| %>
+    <tr id="<%= monster.name %>">
+        <td><%= image_tag monster.picture, style: "width: 50px; height: 50px" %> </td>
+        <td><%= monster.name %></td>
+        <td><%= monster.description %></td>
+        <td><%= monster.monster_type %></td>
+
+        <td><% monster.weaknesses.each do |weakness| %>
+            <%= image_tag "icons/#{weakness.downcase}.png", style: "width: 20px; height: 20px" %>
+        <% end %></td>
+
+        <% if monster.element.nil? %>
+            <td>✖</td>
+        <% else %>
+            <td><%= image_tag "icons/#{monster.element.downcase}.png", style: "width: 20px; height: 20px" %></td>
+        <% end %>
+
+        <td style="font-size:10px"><% (0...monster.rank).each do %>★<% end %></td>
+
+        <% if monster.tail_severable %>
+            <td>✔</td>
+        <% else %>
+            <td>✖</td>
+        <% end %>
+    </tr>
+    <% end %>
+
+</table>
