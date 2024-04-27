@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   get 'monsters', to: 'monsters#index', as: 'monsters'
   get 'weapons', to: 'weapons#index', as: 'weapons'
+  get 'home', to: 'pages#home'
+  root to: 'pages#home'
 end
