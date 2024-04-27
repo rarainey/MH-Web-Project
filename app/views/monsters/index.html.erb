@@ -1,8 +1,8 @@
 <div class="header">
     <h1>Monsters</h1>
     <div class="searchbar">
-        <input type="text" id="search">
-        <button type="submit" id="submit">Search</button>
+        <input type="text" id="searchBox">
+        <input type="button" onclick="searchMonster();" value="Search">
     </div>
 </div>
 
@@ -19,7 +19,7 @@
     </tr>
 
     <% @monsters.each do |monster| %>
-    <tr id="<%= monster.name %>">
+    <tr id="<%= monster.name.downcase %>">
         <td><%= image_tag monster.picture, style: "width: 50px; height: 50px" %> </td>
         <td><%= monster.name %></td>
         <td><%= monster.description %></td>
@@ -46,3 +46,33 @@
     <% end %>
 
 </table>
+
+<script>
+    const tableRows = Array.from(document.getElementsByTagName("tr"));
+    tableRows.shift(); /* To remove the header from the list */
+
+    const searchBox = document.getElementById('searchBox');
+    searchBox.addEventListener('keypress', function(event) {
+        if (event.key == "Enter") {
+            searchMonster();
+        }
+    });
+
+    function searchMonster() {
+        const searchQuery = searchBox.value.trim().toLowerCase();
+
+        if (searchQuery == "") {
+            tableRows.forEach(element => {
+                element.style.display = "table-row";
+            });
+        } else {
+            tableRows.forEach(element => {
+                if (element.id == searchQuery) {
+                    element.style.display = "table-row"; 
+                } else {
+                    element.style.display = "none"; 
+                }
+            });
+        }
+    }
+</script>
