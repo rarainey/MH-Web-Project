@@ -3,6 +3,6 @@
 </div>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; text-align: center">
-    <h1 class="home-link"><%= link_to "Monsters", monsters_path %></h1>
+    <h1 class="home-link"><%= link_to "Monsters", monsters_path, data: {turbo: false}%></h1>
     <h1 class="home-link"><%= link_to "Weapons", weapons_path %></h1>
 </div>
