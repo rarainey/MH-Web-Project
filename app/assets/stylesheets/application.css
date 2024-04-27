@@ -73,8 +73,8 @@ tr:nth-child(odd) {
 
 .back {
     position: absolute;
-    right: 5%;
-    top: 5%;
+    left: 1%;
+    top: 2%;
     a{
         color: white;
         text-decoration: none;
