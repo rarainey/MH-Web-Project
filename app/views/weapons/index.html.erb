@@ -1,0 +1,48 @@
+<div class="header">
+    <h1>Weapons</h1>
+</div>
+
+<table>
+    <tr id="header">
+        <th></th>
+        <th>Name</th>
+        <th>Attack</th>
+        <th>Type</th>
+        <th>Elemental?</th>
+        <th>Element</th>
+        <th>Element Attack</th>
+        <th>Rarity</th>
+    </tr>
+
+    <% @weapons.each do |weapon| %>
+    <% weapon_file_name = weapon.weapon_type.downcase.gsub(/\s+/, "-") %>
+
+    <tr id="<%= weapon.name.downcase %>">
+        <td><%= image_tag "weapons/#{weapon_file_name}.png", style: "width: 50px; height: 50px" %> </td>
+        <td><%= weapon.name %></td>
+        <td><%= weapon.attack %></td>
+        <td><%= weapon.weapon_type %></td>
+    
+        <% if weapon.is_elemental %>
+            <td>✔</td>
+        <% else %>
+            <td>✖</td>
+        <% end %>
+
+        <% if weapon.element.nil? %>
+            <td>✖</td>
+        <% else %>
+            <td><%= image_tag "icons/#{weapon.element.downcase}.png", style: "width: 20px; height: 20px" %></td>
+        <% end %>
+
+        <% if weapon.element_attack.nil? %>
+            <td>✖</td>
+        <% else %>
+            <td><%= weapon.element_attack %></td>
+        <% end %>
+
+        <td><%= weapon.rarity %></td>
+    </tr>
+    <% end %>
+
+</table>
