@@ -16,7 +16,8 @@
 
  
 html {
-    background-color: rgb(104, 104, 100);
+    background-image: Url("background.jpg");
+    background-size: cover;
     color: white
  }
 
@@ -57,5 +58,34 @@ tr:nth-child(odd) {
 
     input {
         max-height: 25px;
+    }
+}
+
+.home-link {
+    background-color: rgb(63, 74, 63);
+    border: black 1px solid;
+    padding: 5px;
+    a{
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.back {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    a{
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.logo {
+    background-color: rgb(63, 5, 5);
+    border: 3px solid black;
+    text-align: center;
+    img {
+        display: inline-block
     }
 }
